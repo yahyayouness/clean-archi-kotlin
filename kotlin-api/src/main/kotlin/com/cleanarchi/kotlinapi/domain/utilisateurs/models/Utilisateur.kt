@@ -10,4 +10,3 @@ data class Utilisateur(
     private val password: String,
     private val type: TypeUtilisateur
 )
-

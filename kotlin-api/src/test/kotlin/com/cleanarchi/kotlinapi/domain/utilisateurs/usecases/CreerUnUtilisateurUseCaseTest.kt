@@ -11,10 +11,10 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-class CreerUnUtilisateurTest {
+class CreerUnUtilisateurUseCaseTest {
 
     private val utilisateurRepository: IUtilisateurRepository = mockk()
-    private gitval creerUtilisateur = CreerUnUtilisateur(utilisateurRepository)
+    private val creerUtilisateur = CreerUnUtilisateur(utilisateurRepository)
 
     @Nested
     @DisplayName("Utilisateur")
@@ -29,7 +29,7 @@ class CreerUnUtilisateurTest {
             // When
             val result = creerUtilisateur.execute(utilisateur)
             // Then
-            verify( exactly = 1) { utilisateurRepository.creerUnUtilisateur(utilisateur) }
+            verify(exactly = 1) { utilisateurRepository.creerUnUtilisateur(utilisateur) }
             assertThat(result).isEqualTo(utilisateur)
         }
     }
